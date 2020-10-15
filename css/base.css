@@ -1,0 +1,208 @@
+body{
+    background-image: url("../img/bg-body.jpg");
+}
+
+.main-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 860px;
+    grid-template-rows: auto auto auto;
+    grid-gap: 0.5rem;
+    margin: 2rem auto 1rem auto;
+}
+
+/** Header */
+.main-container header{
+    display: flex;
+}
+    /** Header - LOGO */
+    .logo{
+        margin-left: 2rem;
+        width: 50%;
+    }
+        .logo__description{
+            color: #555;
+            line-height: 1.25rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.25rem;
+        }
+    /** Header - SOCIAL ICONS */
+    .social-icons-container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 50%;
+    }
+        .social-icons-container__links{
+            display: flex;
+            margin: 0 2rem 0 0;
+            opacity: 0.75;
+            z-index: -1;
+            transition: all ease 1s;
+        }
+            .social-icons-container__link{
+                margin-right: 1rem;
+            }
+        .social-icons-container__button{
+            border: none;
+            width: 2rem;
+            height: 2rem;
+            color: white;
+            background-color: var(--red-light);
+            line-height: 1rem;
+            font-size: 1.25rem;
+            box-shadow: 0 0 0 0 rgb(101, 100, 102);
+        }
+
+/** Content */
+.main-content{
+    display: flex;
+    flex-direction: column;
+}
+    /** Content - Profile*/
+    .profile{
+        display: flex;
+        background-color: var(--red-light);
+        background-image: url("../img/header-shadow.png");
+        background-position: center bottom;
+        background-repeat: repeat-x;
+    }
+        /** Content - Profile : ABOUT */
+        .about{
+            display: flex;
+            margin-top: 2rem;
+            margin-left: 1.25rem;
+            width: 50%;
+        }
+            .about__photo{
+                width: 12rem;
+                height: 13rem;
+                padding: 0.75rem 0 0 1.25rem;
+                background-image: url("../img/photo-inner.png");
+                background-repeat: no-repeat;
+            }
+            .about__texts{
+                margin-left: 1rem;
+            }
+                .about__texts-title{
+                    margin-top: 0.5rem;
+                    color: white;
+                    line-height: 2rem;
+                    font-weight: 700;
+                }
+                .about__texts-subtitle{
+                    margin-top: 0.1rem;
+                    color: white;
+                    line-height: 1.25rem;
+                    font-size: 1rem;
+                    font-family: 'Oswald', sans-serif;
+                }
+                .about__texts-description{
+                    margin-top: 1rem;
+                    color: white;
+                    line-height: 1.5rem;
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    font-family: 'Roboto Condensed', sans-serif;
+                }
+        /** Content - Profile : PERSONAL INFO */
+        .personal-info{
+            margin-top: 1.5rem;
+            margin-left: 0.75rem;
+            padding: 1.25rem 0 1.25rem 1.25rem;
+            width: 45%;
+            min-height: 16rem;
+            background: url("../img/personal-info-sep.png") no-repeat left top;
+        }
+            .personal-info__line{
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 0.25rem;
+                width: 100%;
+                line-height: 0.75rem;
+                font-size: 0.9rem;
+            }
+                .personal-info__line-title{
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 3px;
+                    color: var(--gray-medium);
+                    font-weight: 550;
+                    font-family: 'Roboto Condensed', sans-serif;
+                    text-transform: uppercase;
+                }
+                .personal-info__line-desciprtion{
+                    padding-top: 0.25rem;
+                    width: 18rem;
+                    color: white;
+                    font-weight: 400;
+                    font-family: 'Roboto Condensed', sans-serif;
+                }
+
+    .menu-main{
+        padding-left: 9rem;
+        padding-right: 9rem;
+        height: 6rem;
+        background-color: var(--gray-light);
+    }
+        .menu-main_tabs{
+            display: flex;
+            margin-top: -1rem;
+            height: 7.5rem;
+            z-index: 100;
+        }
+            .menu-main_tab{
+                margin-right: 2rem;
+                padding: 1.5rem 0;
+                width: 7.5rem;
+                line-height: 2rem;
+            }
+            .menu-main_tab.active{
+                background: url("../img/tab-hover.png") no-repeat;
+            }
+                .menu-main_tab-link{
+                    color: var(--gray-medium);
+                    font-size: 1rem;
+                    font-weight: 580;
+                    font-family: 'Roboto Condensed', sans-serif;
+                    text-align: center;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                }
+                .menu-main_tab-link.active{
+                    color: var(--red-light);
+                }
+                    .menu-main_tab-link > i{
+                        display: block;
+                        margin-bottom: 0.1rem;
+                        font-size: 3rem;
+                    }
+                    .menu-main_tab-link.active > i{
+                        animation:  bounce 2s infinite;
+                    }
+                    .menu-main_tab-link > span{
+                        display: block;
+                    }
+
+/** Animaciones */
+@keyframes bounce{
+    0%, 20%, 50%, 80%, 100%{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-0px);
+    }
+    60%{
+        transform: translateY(-10px);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .main-container{
+        grid-template-columns: 700px;
+    }
+}
+
+@media (max-width: 425px) {
+    
+}
