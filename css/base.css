@@ -1,3 +1,7 @@
+/** GENERIC CLASSES */
+
+
+/** DOM */
 body{
     background-image: url("../img/bg-body.jpg");
 }
@@ -17,11 +21,12 @@ body{
 }
     /** Header - LOGO */
     .logo{
+        visibility: hidden;
         margin-left: 2rem;
         width: 50%;
     }
-        .logo__description{
-            color: #555;
+        .logo__subtitle{
+            color: var(--gray-dark);
             line-height: 1.25rem;
             font-family: 'Oswald', sans-serif;
             font-size: 1.25rem;
@@ -58,6 +63,7 @@ body{
 .main-content{
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
     /** Content - Profile*/
     .profile{
@@ -167,6 +173,12 @@ body{
                     text-align: center;
                     text-transform: uppercase;
                     text-decoration: none;
+                    transition: all ease 0.5s;
+                }
+                .menu-main_tab-link:hover{
+                    color: var(--gray-medium);
+                    text-decoration: none;
+                    font-size: 1.25rem;
                 }
                 .menu-main_tab-link.active{
                     color: var(--red-light);
@@ -182,6 +194,12 @@ body{
                     .menu-main_tab-link > span{
                         display: block;
                     }
+
+/** Footer */
+.copyright{
+    color: var(--gray-dark);
+    font-weight: 700;
+}
 
 /** Animaciones */
 @keyframes bounce{

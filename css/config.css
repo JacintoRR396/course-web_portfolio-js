@@ -12,6 +12,7 @@
     --blue-desaturated: hsl(228, 34%, 66%);
 
     /*  Dark */
+    --gray-dark: #555;
     --blue-dark: hsl(228, 12%, 44%);
     --blue-very-dark: hsl(230, 17%, 14%);
     --blue-desaturated-dark: hsl(228, 28%, 20%);
@@ -24,9 +25,4 @@
         hsl(329, 70%, 58%) 100%
     );
     --youTube: hsl(348, 97%, 39%);
-}
-
-html{
-/*    font-family: 'Oswald', sans-serif;*/
-    /*font-family: 'Roboto Condensed', sans-serif;*/
 }

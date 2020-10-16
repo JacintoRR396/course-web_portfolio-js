@@ -25,7 +25,7 @@
             <header>
                 <div class="logo">
                     <h2 class="logo__title">Jacinto Roldán Rodríguez</h2>
-                    <h4 class="logo__description">Desarrollador FullStack (Spring & Angular)</h4>
+                    <h4 class="logo__subtitle">Desarrollador FullStack (Spring & Angular)</h4>
                 </div>
                 <div class="social-icons-container">
                     <ul class="social-icons-container__links">
@@ -47,7 +47,8 @@
                 </div>
             </header>
             <section class="main-content">
-                <div class="profile">
+                <!-- PROFILE -->
+                <section id="profile" class="profile">
                     <div class="about">
                         <div class="about__photo">
                             <img src="./img/photo.jpg" alt="">
@@ -86,35 +87,73 @@
                             <span class="personal-info__line-desciprtion word-wrap">www.google.es</span>
                         </li>
                     </ul>
-                </div>
+                </section>
+                <!-- MENU -->
                 <nav class="menu-main">
                     <ul class="menu-main_tabs">
                         <li class="menu-main_tab active">
-                            <a href="" class="menu-main_tab-link menu-main_tab-profile active">
+                            <a href="#profile" class="menu-main_tab-link active">
                                 <i class="fa fa-user"></i>
                                 <span>PROFILE</span>
                             </a>
                         </li>
                         <li class="menu-main_tab">
-                            <a href="" class="menu-main_tab-link ">
+                            <a href="#resume" class="menu-main_tab-link">
                                 <i class="fa fa-wpexplorer"></i>
                                 <span>RESUME</span>
                             </a>
                         </li>
                         <li class="menu-main_tab">
-                            <a href="" class="menu-main_tab-link ">
+                            <a href="#portfolio" class="menu-main_tab-link">
                                 <i class="fa fa-eercast"></i>
                                 <span>PORTFOLIO</span>
                             </a>
                         </li>
                         <li class="menu-main_tab">
-                            <a href="" class="menu-main_tab-link ">
+                            <a href="#contact" class="menu-main_tab-link">
                                 <i class="fa fa-telegram"></i>
                                 <span>CONTACT</span>
                             </a>
                         </li>
                     </ul>
                 </nav>
+                <!-- RESUME -->
+                <section id="resume" class="resume">
+                    <div class="resume-profile">
+                        <h1 class="resume-profile__title">JACINTO R^2</h1>
+                        <h3 class="resume-profile__subtitle">DESARROLLDADOR FULLSTACK<br>(SPRING & ANGULAR)</h3>
+                        <p class="resume-profile__description">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et aliquid qui iure minima iste aut alias quia assumenda! Porro, molestias?
+                        </p>
+                    </div>
+                    <div class="resume-contact">
+                        <ul class="resume-contact__data">
+                            <li class="resume-contact__data-line">
+                                <label class="resume-contact__data-line-title">Address</label>
+                                <span class="resume-contact__data-line-desciprtion">Corredera 155, El Viso del Alcor (Sevilla)</span>
+                            </li>
+                            <li class="resume-contact__data-line">
+                                <label class="resume-contact__data-line-title">Email</label>
+                                <span class="resume-contact__data-line-desciprtion">balbino.v12@gmail.com</span>
+                            </li>
+                            <li class="resume-contact__data-line">
+                                <label class="resume-contact__data-line-title">Phone</label>
+                                <span class="resume-contact__data-line-desciprtion">610972145</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="resume-experience">
+                        
+                    </div>
+                </section>
+                <!-- PROTFOLIO -->
+                <section id="portfolio" class="portfolio">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, iure libero dignissimos voluptates, numquam eligendi eaque dolorum doloremque doloribus odio ullam aut. Cumque quas quis reiciendis ullam esse blanditiis suscipit iure est, enim minima beatae explicabo eum nobis laudantium ea.</p>
+                </section>
+                <!-- CONTACT -->
+                <section id="contact" class="contact">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto nostrum pariatur perferendis numquam dolore reprehenderit odio, fugiat sequi eaque inventore harum voluptates ipsa similique est obcaecati, quam doloribus incidunt voluptatibus?</p>
+                </section>
             </section>
             <footer>
                 <div class="copyright">
@@ -129,5 +168,11 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <!-- JS - JQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <!-- JS - JQuery : Easytabs -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.easytabs/3.2.0/jquery.easytabs.min.js"></script>
+            <!-- JS - JQuery : Isotope -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+            <!-- JS - JQuery : Caroufredsel -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js"></script>
     </body>
 </html>
