@@ -1,5 +1,20 @@
 /** GENERIC CLASSES */
-
+.content-title-back{
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-indent: 0.5rem;
+    letter-spacing: 0.5rem;
+}
+.content-title-circle{
+    margin: 0.5rem;
+    border-radius: 10px;
+    padding: 0.15rem;
+    width: 30%;
+    text-transform: uppercase;
+    text-indent: 1rem;
+}
 
 /** DOM */
 body{
@@ -19,7 +34,7 @@ body{
 .main-container header{
     display: flex;
 }
-    /** Header - LOGO */
+    /*! Header - LOGO */
     .logo{
         visibility: hidden;
         margin-left: 2rem;
@@ -31,7 +46,7 @@ body{
             font-family: 'Oswald', sans-serif;
             font-size: 1.25rem;
         }
-    /** Header - SOCIAL ICONS */
+    /*! Header - SOCIAL ICONS */
     .social-icons-container{
         display: flex;
         justify-content: flex-end;
@@ -65,7 +80,7 @@ body{
     flex-direction: column;
     background-color: white;
 }
-    /** Content - Profile*/
+    /*? Content - Profile*/
     .profile{
         display: flex;
         background-color: var(--red-light);
@@ -73,7 +88,7 @@ body{
         background-position: center bottom;
         background-repeat: repeat-x;
     }
-        /** Content - Profile : ABOUT */
+        /*! Content - Profile : ABOUT */
         .about{
             display: flex;
             margin-top: 2rem;
@@ -92,16 +107,17 @@ body{
             }
                 .about__texts-title{
                     margin-top: 0.5rem;
-                    color: white;
+                    color: var(--gray-medium);
                     line-height: 2rem;
                     font-weight: 700;
                 }
                 .about__texts-subtitle{
                     margin-top: 0.1rem;
-                    color: white;
+                    color: black;
                     line-height: 1.25rem;
-                    font-size: 1rem;
+                    font-size: 1.25rem;
                     font-family: 'Oswald', sans-serif;
+                    font-weight: 500;
                 }
                 .about__texts-description{
                     margin-top: 1rem;
@@ -111,7 +127,7 @@ body{
                     font-weight: 400;
                     font-family: 'Roboto Condensed', sans-serif;
                 }
-        /** Content - Profile : PERSONAL INFO */
+        /*! Content - Profile : PERSONAL INFO */
         .personal-info{
             margin-top: 1.5rem;
             margin-left: 0.75rem;
@@ -144,12 +160,15 @@ body{
                     font-family: 'Roboto Condensed', sans-serif;
                 }
 
+    /*? Content - Menu*/
     .menu-main{
         padding-left: 9rem;
         padding-right: 9rem;
         height: 6rem;
         background-color: var(--gray-light);
+        border-bottom: 1px solid var(--red-light);
     }
+        /*! Content - Menu : TABS*/
         .menu-main_tabs{
             display: flex;
             margin-top: -1rem;
@@ -157,7 +176,7 @@ body{
             z-index: 100;
         }
             .menu-main_tab{
-                margin-right: 2rem;
+                margin-right: 1.5rem;
                 padding: 1.5rem 0;
                 width: 7.5rem;
                 line-height: 2rem;
@@ -195,6 +214,99 @@ body{
                         display: block;
                     }
 
+    /*? Content - Resume*/
+    .resume{
+        display: flex;
+        background-color: var(--gray-light);
+    }
+        .resume-part-left, .resume-part-right{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+        .resume-profile, .resume-contact, .resume-experience, .resume-skills, .resume-intersets, .resume-education{
+            display: flex;
+            flex-direction: column;
+        }
+        .resume-skills, .resume-intersets, .resume-education{
+            background-color: black;
+            color: white;
+        }
+        /*! Content - Resume : PPROFILE*/
+        .resume-profile{
+            padding: 0.5rem 1rem;
+        }
+            .resume-profile__title{
+                margin: 1rem 0.5rem 0.5rem;
+                color: var(--red-light);
+                font-size: 3rem;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            .resume-profile__subtitle{
+                border-radius: 50px;
+                padding: 0.5rem;
+                width: 90%;
+                background-color: black;
+                color: white;
+                text-align: center;
+                text-transform: uppercase;
+            }
+            .resume-profile__description{
+                margin: 1rem 0;
+                color: black;
+            }
+        /*! Content - Resume : CONTACT - EXPERIENCE*/
+        .resume-contact, .resume-experience{
+            background-color: white;
+        }
+            .resume-contact-title, .resume-experience-title{
+                background-color: var(--red-light);
+                color: white;
+            }
+        /*! Content - Resume : CONTACT*/
+            .resume-contact-data{
+                border-top: 1px dotted red;
+                padding: 0.5rem 1rem;
+            }
+                .resume-contact-data__line{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 1rem 0;
+                    font-weight: 700;
+                }
+                    .resume-contact-data__line-title{
+                        width: 25%;
+                        color: var(--red-light);
+                        text-transform: uppercase;
+                    }
+                    .resume-contact-data__line-desciprtion{
+                        width: 75%;
+                    }
+        /*! Content - Resume : EXPERIENCE*/
+            .resume-experience-data__line{
+                display: flex;
+                flex-direction: column;
+                border-top: 1px dotted red;
+                padding: 1rem;
+            }
+                .resume-experience-data__line-date{
+                    background-color: var(--red-light);
+                    color: white;
+                }
+                .resume-experience-data__line-title{
+                    margin: 0.25rem;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                }
+                .resume-experience-data__line-desciprtion{
+                    margin: 0.25rem;
+                }
+        /*! Content - Resume : SKILLS*/
+            .resume-skills-data{
+                background-color: var(--gray-medium);
+            }
+
 /** Footer */
 .copyright{
     color: var(--gray-dark);
@@ -207,7 +319,7 @@ body{
         transform: translateY(0);
     }
     40%{
-        transform: translateY(-0px);
+        transform: translateY(0px);
     }
     60%{
         transform: translateY(-10px);
@@ -222,5 +334,4 @@ body{
 }
 
 @media (max-width: 425px) {
-    
 }
