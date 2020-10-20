@@ -416,35 +416,57 @@ a{
                     padding: 0.5rem 1rem;
                     background-color: var(--gray-dark);
                 }
+                .portfolio-filter-data__line:hover{
+                    border-color: var(--blue-desaturated);
+                }
+                .portfolio-filter-data__line.active{
+                    border-color: var(--gray-dark);
+                    background-color: var(--red-light);
+                    /*border-color: var(--gray-dark);
+                    background-color: var(--red-light);*/
+                }
+                .portfolio-filter-data__line.active:hover{
+                    border-color: var(--gray-medium);
+                }
         /*! Content - Portfolio : LIST*/
             .portfolio-list-data{
                 background-color: var(--gray-light-medium);
             }
                 .portfolio-list-data__line{
                     margin: 1rem 2.5rem;
-                    padding: 0.5rem;
+                    border-top: 2px solid var(--gray-light);
+                    border-bottom: 2px solid var(--gray-light);
                     border-radius: 5px;
+                    padding: 0.5rem;
                     background-color: var(--gray-light);
                 }
-                .portfolio-list-data__line-link{
-                    color: var(--black);
+                .portfolio-list-data__line:hover{
+                    border-bottom-color: var(--blue-dark);
+                    background-color: var(--gray-medium);
                 }
-                    .portfolio-list-data__line-link-img{
-                        width: 180px;
-                        height: 120px;
+                .portfolio-list-data__line.active{
+                    border-top: 2px solid var(--blue-dark);
+                    border-bottom: 2px solid var(--blue-dark);
+                }
+                    .portfolio-list-data__line-link{
+                        color: var(--black);
                     }
-                    .portfolio-list-data__line-link-title{
-                        margin: 0.5rem 0;
-                        text-indent: 0.5rem;
-                        font-weight: 700;
-                    }
-                    .portfolio-list-data__line-link-categorie{
-                        display: block;
-                        color: var(--red-light);
-                        font-weight: 700;
-                        text-align: right;
-                        text-transform: uppercase;
-                    }
+                        .portfolio-list-data__line-link-img{
+                            width: 180px;
+                            height: 120px;
+                        }
+                        .portfolio-list-data__line-link-title{
+                            margin: 0.5rem 0;
+                            text-indent: 0.5rem;
+                            font-weight: 700;
+                        }
+                        .portfolio-list-data__line-link-categorie{
+                            display: block;
+                            color: var(--red-light);
+                            font-weight: 700;
+                            text-align: right;
+                            text-transform: uppercase;
+                        }
 
 /** Footer */
 .copyright{
