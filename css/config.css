@@ -2,11 +2,14 @@
     /* Normal */
     --green: hsl(163, 72%, 41%);
     --red: hsl(356, 69%, 56%);
+    --white: #FFF;
+    --black: #000;
 
-    --red-light: #CF445C;
 
     /* Light */
+    --red-light: #CF445C;
     --gray-light: #EDEDED;
+    --gray-light-medium: #DDD;
     --gray-medium: #B9B9B9;
     --blue-light: hsl(230, 22%, 74%);
     --blue-desaturated: hsl(228, 34%, 66%);

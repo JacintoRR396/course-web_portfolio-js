@@ -21,6 +21,13 @@ body{
     background-image: url("../img/bg-body.jpg");
 }
 
+a{
+    color: var(--white);
+    text-decoration: none;
+}
+
+/** CLASSES */
+
 .main-container{
     display: grid;
     justify-content: center;
@@ -36,16 +43,33 @@ body{
 }
     /*! Header - LOGO */
     .logo{
-        visibility: hidden;
+        display: flex;
+        visibility: visible;
         margin-left: 2rem;
         width: 50%;
     }
-        .logo__subtitle{
-            color: var(--gray-dark);
-            line-height: 1.25rem;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.25rem;
+        .logo__img{
+            width: 4rem;
+            height: 4rem;
+            filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.7));
         }
+        .logo-texts{
+            display: flex;
+            flex-direction: column;
+            margin-left: 1rem;
+            justify-content: center;
+        }
+            .logo__title{
+                line-height: 1.5rem;
+                font-size: 1.5rem;
+                font-weight: 900;
+            }
+            .logo__subtitle{
+                color: var(--gray-dark);
+                line-height: 1.25rem;
+                font-family: 'Oswald', sans-serif;
+                font-size: 1.25rem;
+            }
     /*! Header - SOCIAL ICONS */
     .social-icons-container{
         display: flex;
@@ -67,19 +91,19 @@ body{
             border: none;
             width: 2rem;
             height: 2rem;
-            color: white;
+            color: var(--white);
             background-color: var(--red-light);
             line-height: 1rem;
             font-size: 1.25rem;
-            box-shadow: 0 0 0 0 rgb(101, 100, 102);
         }
 
 /** Content */
 .main-content{
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--white);
 }
+
     /*? Content - Profile*/
     .profile{
         display: flex;
@@ -113,7 +137,6 @@ body{
                 }
                 .about__texts-subtitle{
                     margin-top: 0.1rem;
-                    color: black;
                     line-height: 1.25rem;
                     font-size: 1.25rem;
                     font-family: 'Oswald', sans-serif;
@@ -121,7 +144,7 @@ body{
                 }
                 .about__texts-description{
                     margin-top: 1rem;
-                    color: white;
+                    color: var(--white);
                     line-height: 1.5rem;
                     font-size: 0.9rem;
                     font-weight: 400;
@@ -155,7 +178,7 @@ body{
                 .personal-info__line-desciprtion{
                     padding-top: 0.25rem;
                     width: 18rem;
-                    color: white;
+                    color: var(--white);
                     font-weight: 400;
                     font-family: 'Roboto Condensed', sans-serif;
                 }
@@ -220,21 +243,22 @@ body{
         background-color: var(--gray-light);
     }
         .resume-part-left, .resume-part-right{
-            display: flex;
+            display: none;
             flex-direction: column;
             width: 50%;
         }
-        .resume-profile, .resume-contact, .resume-experience, .resume-skills, .resume-intersets, .resume-education{
+        .resume-profile, .resume-contact, .resume-experience, .resume-skills, .resume-interests, .resume-education{
             display: flex;
             flex-direction: column;
         }
-        .resume-skills, .resume-intersets, .resume-education{
-            background-color: black;
-            color: white;
+        .resume-skills, .resume-interests, .resume-education{
+            background-color: var(--black);
+            color: var(--white);
         }
         /*! Content - Resume : PPROFILE*/
         .resume-profile{
             padding: 0.5rem 1rem;
+            background-color: var(--gray-light-medium);
         }
             .resume-profile__title{
                 margin: 1rem 0.5rem 0.5rem;
@@ -247,27 +271,26 @@ body{
                 border-radius: 50px;
                 padding: 0.5rem;
                 width: 90%;
-                background-color: black;
-                color: white;
+                background-color: var(--black);
+                color: var(--white);
                 text-align: center;
                 text-transform: uppercase;
             }
             .resume-profile__description{
                 margin: 1rem 0;
-                color: black;
             }
         /*! Content - Resume : CONTACT - EXPERIENCE*/
         .resume-contact, .resume-experience{
-            background-color: white;
+            background-color: var(--white);
         }
             .resume-contact-title, .resume-experience-title{
                 background-color: var(--red-light);
-                color: white;
+                color: var(--white);
             }
         /*! Content - Resume : CONTACT*/
             .resume-contact-data{
                 border-top: 1px dotted red;
-                padding: 0.5rem 1rem;
+                padding: 1rem;
             }
                 .resume-contact-data__line{
                     display: flex;
@@ -292,7 +315,7 @@ body{
             }
                 .resume-experience-data__line-date{
                     background-color: var(--red-light);
-                    color: white;
+                    color: var(--white);
                 }
                 .resume-experience-data__line-title{
                     margin: 0.25rem;
@@ -302,15 +325,132 @@ body{
                 .resume-experience-data__line-desciprtion{
                     margin: 0.25rem;
                 }
-        /*! Content - Resume : SKILLS*/
-            .resume-skills-data{
-                background-color: var(--gray-medium);
+        /*! Content - Resume : SKILLS - INTERESTS - EDUCATION*/
+            .resume-skills-title, .resume-interests-title, .resume-education-title{
+                color: var(--red-light);
+                text-align: center;
             }
+            .resume-skills-data, .resume-interests-data, .resume-education-data{
+                background-color: var(--blue-desaturated-dark);
+                padding: 1rem;
+            }
+        /*! Content - Resume : SKILLS*/
+            .resume-skills-data__line{
+                display: flex;
+                padding: 0.5rem 1rem;
+            }
+                .resume-skills-data__line-title{
+                    width: 35%;
+                    text-transform: uppercase;
+                }
+                .resume-skills-data__line-progressbar{
+                    border-radius: 15px;
+                    width: 65%;
+                    background-color: var(--white);
+                }
+                .resume-skills-data__line-progressbar::before{
+                    content: attr(data-value) '%';
+                    display: block;
+                    border-radius: 15px;
+                    margin: 0.15rem;
+                    width: 60%;
+                    height: 80%;
+                    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, var(--red-light) 100%);
+                    text-align: center;
+                }
+        /*! Content - Resume : INTERESTS*/
+            .resume-interests-data{
+                display: flex;
+                flex-wrap: wrap;
+            }
+                .resume-interests-data__line{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 1rem;
+                    width: 25%;
+                }
+                    .resume-interests-data__line-icon{
+                        margin-bottom: 1rem;
+                        color: var(--blue-desaturated);
+                        font-size: 2rem;
+                    }
+                    .resume-interests-data__line-title{
+                        text-transform: uppercase;
+                    }
+        /*! Content - Resume : EDUCATION*/
+            .resume-education-data__line{
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+            }
+                .resume-education-data__line-date{
+                    color: var(--blue-very-dark);
+                    background-color: var(--white);
+                    font-weight: 900;
+                }
+                .resume-education-data__line-title{
+                    color: var(--red-light);
+                    margin: 0.25rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+                .resume-education-data__line-desciprtion{
+                    margin: 0.25rem;
+                }
+
+    /*? Content - Portfolio*/
+        .portfolio-filter, .portfolio-list{
+            margin: 0 1rem;
+        }
+            .portfolio-filter-data, .portfolio-list-data{
+                display: flex;
+                flex-wrap: wrap;
+                border-bottom: 1px solid var(--blue-desaturated-dark);
+            }
+        /*! Content - Portfolio : FILTER*/
+                .portfolio-filter-data__line{
+                    margin: 1rem;
+                    border: 2px solid var(--gray-medium);
+                    border-radius: 15px;
+                    padding: 0.5rem 1rem;
+                    background-color: var(--gray-dark);
+                }
+        /*! Content - Portfolio : LIST*/
+            .portfolio-list-data{
+                background-color: var(--gray-light-medium);
+            }
+                .portfolio-list-data__line{
+                    margin: 1rem 2.5rem;
+                    padding: 0.5rem;
+                    border-radius: 5px;
+                    background-color: var(--gray-light);
+                }
+                .portfolio-list-data__line-link{
+                    color: var(--black);
+                }
+                    .portfolio-list-data__line-link-img{
+                        width: 180px;
+                        height: 120px;
+                    }
+                    .portfolio-list-data__line-link-title{
+                        margin: 0.5rem 0;
+                        text-indent: 0.5rem;
+                        font-weight: 700;
+                    }
+                    .portfolio-list-data__line-link-categorie{
+                        display: block;
+                        color: var(--red-light);
+                        font-weight: 700;
+                        text-align: right;
+                        text-transform: uppercase;
+                    }
 
 /** Footer */
 .copyright{
     color: var(--gray-dark);
     font-weight: 700;
+    text-align: center;
 }
 
 /** Animaciones */
