@@ -1,6 +1,6 @@
 window.onload = function() {
     initPage();
-    console.log( "» document ready :)" );
+    console.log( " » document ready :)" );
 };
 
 /* VARS & CONST*/
@@ -8,26 +8,22 @@ const logoHeader = document.querySelector(".logo-header");
 const socialIconsLinks = document.querySelector(".social-icons-links");
 const socialIconsButton = document.querySelector(".social-icons__button");
 
+const profileButton = document.querySelectorAll(".menu-main_tab-link")[0];
+
+const profileContent = document.querySelector(".profile");
 const resumeContent = document.querySelector(".resume");
 const portfolioContent = document.querySelector(".portfolio");
 const contactContent = document.querySelector(".contact");
 
 /* FUNCTIONS */
 function initPage(){
-    initVisibily();
     initButtons();
 }
 
-function initVisibily(){
-    logoHeader.style.visibility = "visible";
-    socialIconsLinks.style.visibility = "visible";
-    /*resumeContent.style.display = "flex";
-    portfolioContent.style.display = "flex";
-    contactContent.style.display = "flex";*/
-}
-
 function initButtons(){
-    socialIconsButton.addEventListener("click", function(){
-        console.log("Ascen");
+    socialIconsButton.addEventListener("click", () => socialIconsLinks.classList.toggle("visibility"));
+    profileButton.addEventListener("click", function(){
+        logoHeader.classList.toggle("visibility");
+        
     });
 }
