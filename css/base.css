@@ -1,9 +1,30 @@
 /** --- GENERIC CLASSES --- */
-.visibility{
-    visibility: visible !important;
-}
 .display-flex{
     display: flex !important;
+}
+.display-none{
+    display: none !important;
+}
+
+.opacity-on{
+    opacity: 1 !important;
+}
+.opacity-off{
+    opacity: 0 !important;
+}
+
+.collapse-height{
+    max-height: 2rem !important;
+}
+
+.translate-xy{
+    transform: translate(0rem, 0rem) !important;
+}
+.translate-x{
+    transform: translateX(0rem) !important;
+}
+.translate-y{
+    transform: translateY(0rem) !important;
 }
 
 .content-title-back{
@@ -25,7 +46,11 @@
 
 /** --- DOM --- */
 body{
-    background-image: url("../img/bg-body.jpg");
+    height: 100vh;
+    background: radial-gradient(circle,
+     rgba(127,139,152,1) 0%, rgba(64,81,102,1) 20%, rgba(54,72,92,1) 40%, rgba(42,62,85,1) 60%, rgba(30,52,78,1) 80%, rgba(7,32,62,1) 100%);
+    background-repeat: no-repeat;
+    background: white;
 }
 
 a{
@@ -47,13 +72,16 @@ a{
 /** Header */
 .main-container header{
     display: flex;
+    overflow: hidden;
 }
     /*! Header - LOGO */
     .logo-header{
         display: inherit;
-        visibility: visible;
         margin-left: 2rem;
         width: 50%;
+        opacity: 1;
+        transform: translate(-25rem, -5rem);
+        transition: all 2s ease;
     }
         .logo-header__img{
             width: 4rem;
@@ -82,66 +110,61 @@ a{
         align-items: center;
         width: 50%;
     }
-        .social-icons-links{
-            display: flex;
-            visibility:  hidden;
-            margin: 0 2rem 0 0;
-            border-radius: 15px;
-            border: 2px solid var(--gray-medium);
-            background-color: var(--gray-light);
-            opacity: 0.9;
-        }
-            .social-icons-links__line{
-                margin: 0 0.5rem;
-                padding: 0.25rem;
-            }
-                .social-icons-links__line-link{
-                    padding: 0.5rem;
-                    font-size: 1.25rem;
-                    cursor: pointer;
-                }
-                .social-icons-links__line-link:hover > .fa{
-                    opacity: 0.5;
-                }
-                    .fa-facebook{
-                        color: var(--facebook);
-                    }
-                    .fa-twitter{
-                        color: var(--twitter);
-                    }
-                    .fa-linkedin{
-                        color: var(--linkedin);
-                    }
-                    .fa-whatsapp{
-                        color: var(--whatsapp);
-                    }
-        .social-icons__button{
+        .social-icons-links, .social-icons__button{
             border: 1px solid var(--gray-medium);
-            width: 2rem;
-            height: 2rem;
-            color: var(--white);
             background-color: var(--blue-dark);
             line-height: 1rem;
             font-size: 1.25rem;
             cursor: pointer;
+        }
+        .social-icons-links:hover, .social-icons__button:hover{
+            border-color: var(--red-light);
+        }
+        .social-icons-links{
+            display: flex;
+            margin: 0 2rem 0 0;
+            border-radius: 5px 0px;
+            background: radial-gradient(circle, var(--red-light) 0%,
+                var(--blue-dark) 100%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+            .social-icons-links__line{
+                margin: 0 0.5rem;
+                padding: 0.35rem;
+            }
+                .social-icons-links__line-link{
+                    padding: 0.5rem;
+                    color: var(--gray-light);
+                }
+                .social-icons-links__line-link:hover{
+                    color: var(--gray-light-medium);
+                }
+        .social-icons__button{
+            width: 2rem;
+            height: 2rem;
+            color: var(--white);
         }
 
 /** Content */
 .main-content{
     display: flex;
     flex-direction: column;
-    position: relative;
     background-color: transparent;
 }
-
     /*? Content - Profile*/
     .profile{
         display: flex;
         justify-content: space-evenly;
+        min-height: 2rem;
+        max-height: 18rem;
+        border-top: 1px solid var(--gray-light-medium);
         background-color: var(--red-light);
         background-image: url("../img/header-shadow.png");
         background-position: center bottom;
         background-repeat: repeat-x;
+        overflow: hidden;
+        transition: max-height 1s ease-out;
     }
         /*! Content - Profile : ABOUT */
         .about{
@@ -150,12 +173,15 @@ a{
             margin-left: 1.25rem;
         }
             .about__photo{
-                width: 12rem;
-                height: 13rem;
-                padding: 0.75rem 1.25rem;
-                background-image: url("../img/photo-inner.png");
-                background-repeat: no-repeat;
+                width: 10rem;
+                height: 12rem;
+                padding: 0.75rem;
+                filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.7));
             }
+                .about__photo-img{
+                    width: 8rem;
+                    height: 10rem;
+                }
             .about__texts{
                 margin-left: 0.5rem;
             }
@@ -181,17 +207,22 @@ a{
                 }
         /*! Content - Profile : PERSONAL INFO */
         .personal-info{
-            margin: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 1rem 0;
             padding: 1.25rem;
             min-height: 15rem;
-            background: url("../img/personal-info-sep.png") no-repeat left top;
+            background: url("../img/personal-info-sep.png"),
+                linear-gradient(90deg, var(--red-light) 0%, var(--blue-dark) 100%);
+            background-repeat: no-repeat;
         }
             .personal-info__line{
                 display: flex;
                 justify-content: flex-end;
                 margin-bottom: 0.25rem;
                 width: 100%;
-                line-height: 0.75rem;
+                line-height: 1rem;
                 font-size: 0.9rem;
             }
                 .personal-info__line-title{
@@ -214,9 +245,10 @@ a{
         position: relative;
         top: 0;
         padding: 0 6rem;
-        height: 6rem;
+        height: 6.25rem;
         background-color: var(--gray-light);
         border-bottom: 1px solid var(--red-light);
+        /*background: linear-gradient(90deg, var(--red-light) 0%, var(--blue-dark) 100%);*/
     }
         /*! Content - Menu : TABS*/
         .menu-main_tabs{
@@ -231,6 +263,7 @@ a{
                 padding: 1.5rem 0;
                 width: 7.5rem;
                 line-height: 2rem;
+                transition: all ease 0.5s;
             }
             .menu-main_tab.active{
                 background: url("../img/tab-hover.png") no-repeat;
@@ -250,6 +283,12 @@ a{
                     text-decoration: none;
                     font-size: 1.25rem;
                 }
+                .menu-main_tab-link:hover > i{
+                    color: var(--red-light);
+                }
+                .menu-main_tab-link:hover > span{
+                    color: var(--blue-dark);
+                }
                 .menu-main_tab-link.active{
                     color: var(--blue-dark);
                 }
@@ -257,18 +296,27 @@ a{
                         display: block;
                         margin: 0.25rem 0 0.1rem;
                         font-size: 3rem;
+                        transition: color ease-in-out 0.5s;
                     }
                     .menu-main_tab-link.active > i{
                         animation:  bounce 2s infinite;
                     }
                     .menu-main_tab-link > span{
                         display: block;
+                        transition: color ease-in-out 0.5s;
                     }
 
+    .resume, .portfolio, .contact{
+        display: none;
+        border-bottom: 1px solid var(--gray-light-medium);
+        background-color: var(--gray-light-medium);
+        z-index: 0;
+        opacity: 0;
+        transition: all 1s ease-out;
+    }
     /*? Content - Resume*/
     .resume{
-        display: none;
-        background-color: var(--gray-light);
+        border-left: 1px solid var(--gray-light-medium);
     }
         .resume-part-left, .resume-part-right{
             display: flex;
@@ -286,18 +334,17 @@ a{
         /*! Content - Resume : PPROFILE*/
         .resume-profile{
             padding: 0.5rem 1rem;
-            background-color: var(--gray-light-medium);
         }
             .resume-profile__title{
                 margin: 1rem 0.5rem 0.5rem;
                 color: var(--red-light);
-                font-size: 3rem;
+                font-size: 2.5rem;
                 font-weight: 700;
                 text-transform: uppercase;
             }
             .resume-profile__subtitle{
                 border-radius: 50px;
-                padding: 0.5rem;
+                padding: 0.25rem;
                 width: 90%;
                 background-color: var(--black);
                 color: var(--white);
@@ -312,11 +359,12 @@ a{
             background-color: var(--white);
         }
             .resume-contact-title, .resume-experience-title{
-                background-color: var(--red-light);
+                background: linear-gradient(90deg, var(--red-light) 30%, var(--blue-dark) 100%);
                 color: var(--white);
             }
         /*! Content - Resume : CONTACT*/
             .resume-contact-data{
+                background: linear-gradient(90deg, var(--white) 0%, var(--gray-light) 100%);
                 border-top: 1px dotted red;
                 padding: 1rem;
             }
@@ -372,6 +420,7 @@ a{
                     text-transform: uppercase;
                 }
                 .resume-skills-data__line-progressbar{
+                    --data-val : 98%;
                     border-radius: 15px;
                     width: 65%;
                     background-color: var(--white);
@@ -381,10 +430,15 @@ a{
                     display: block;
                     border-radius: 15px;
                     margin: 0.15rem;
-                    width: 60%;
+                    width: var(--data-val);
                     height: 80%;
-                    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, var(--red-light) 100%);
+                    background:
+                        linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%,
+                        rgba(255, 255, 255, 0.15) 75%, transparent 75%) left/30px 30px repeat-x,
+                        linear-gradient(to right, var(--blue-desaturated-dark) 0%, var(--blue-dark) 35%, var(--red-light) 100%), lightgray;
                     text-align: center;
+                    box-shadow:inset 0px -2px 5px rgba(0, 0, 0, 0.5);
+                    animation: changeProgressBar 1s linear infinite;
                 }
         /*! Content - Resume : INTERESTS*/
             .resume-interests-data{
@@ -429,7 +483,6 @@ a{
 
     /*? Content - Portfolio*/
     .portfolio{
-        display: none;
         flex-direction: column;
     }
         .portfolio-filter, .portfolio-list{
@@ -438,9 +491,11 @@ a{
             .portfolio-filter-data, .portfolio-list-data{
                 display: flex;
                 flex-wrap: wrap;
-                border-bottom: 1px solid var(--blue-desaturated-dark);
             }
         /*! Content - Portfolio : FILTER*/
+            .portfolio-filter-data{
+                border-bottom: 1px solid var(--blue-desaturated-dark);
+            }
                 .portfolio-filter-data__line{
                     margin: 1rem;
                     border: 2px solid var(--gray-medium);
@@ -454,8 +509,6 @@ a{
                 .portfolio-filter-data__line.active{
                     border-color: var(--gray-dark);
                     background-color: var(--red-light);
-                    /*border-color: var(--gray-dark);
-                    background-color: var(--red-light);*/
                 }
                 .portfolio-filter-data__line.active:hover{
                     border-color: var(--gray-medium);
@@ -471,6 +524,7 @@ a{
                     border-radius: 5px;
                     padding: 0.5rem;
                     background-color: var(--gray-light);
+                    transition: all 0.5s ease-in-out;
                 }
                 .portfolio-list-data__line:hover{
                     border-bottom-color: var(--blue-dark);
@@ -505,7 +559,6 @@ a{
 
     /*? Content - Contact*/
     .contact{
-        display: none;
         flex-direction: column;
     }
         .contact-row2{
@@ -534,10 +587,14 @@ a{
 /** Footer */
 .copyright{
     padding: 0.25rem;
-    color: var(--gray-dark);
+    border-radius: 5px;
+    background: radial-gradient(circle, var(--blue-dark) 0%,
+                var(--gray-light-medium) 100%);
+    color: var(--white);
     font-weight: 900;
     text-align: center;
     font-size: 1.25rem;
+    text-shadow: 0 0 5px var(--red-light);
 }
 
 /** --- ANIMATIONS --- */
@@ -552,6 +609,10 @@ a{
         transform: translateY(-10px);
     }
 }
+@keyframes changeProgressBar {
+    from {background-position:0 0,left}
+    to {background-position:30px 0,left}
+  }
 
 /** --- RESPONSIVE --- */
 @media (max-width: 769px) {
@@ -560,6 +621,7 @@ a{
         grid-template-columns: 700px;
     }
     /** Header */
+    /*! Header - LOGO */
     .logo-header{
         margin-left: 1.5rem;
         width: 60%;
@@ -570,6 +632,7 @@ a{
             line-height: 1.25rem;
             font-size: 1.15rem;
         }
+    /*! Header - SOCIAL ICONS */
     .social-icons-container{
         width: 40%;
     }
@@ -582,23 +645,23 @@ a{
         }
     /** Content */
         /*? Content - Profile*/
-        .profile{
-            flex-direction: column;
-        }
+            /*! Content - Profile : ABOUT */
             .about{
-                margin: 0.75rem;
+                width: 65%;
             }
-            .personal-info{
-                margin: 0;
-                min-height: 12rem;
-                background: url("../img/header-shadow.png") no-repeat left top;
-            }
+                .about__photo{
+                    padding: 0.5rem;
+                }
+                    .about__photo-img{
+                        width: 7rem;
+                    }
+            /*! Content - Profile : PERSONAL INFO */
                 .personal-info__line-title{
-                    width: 50%;
+                    width: 30%;
                     text-align: right;
                 }
                 .personal-info__line-desciprtion{
-                    width: 50%;
+                    width: 70%;
                 }
         /*? Content - Menu*/
         .menu-main{
@@ -618,23 +681,77 @@ a{
     .main-container header{
         flex-direction: column;
     }
+        /*! Header - LOGO */
         .logo-header{
             margin-bottom: 0.5rem;
             width: 100%;
         }
+        /*! Header - SOCIAL ICONS */
         .social-icons-container{
             width: 100%;
         }
+            .social-icons-links{
+                visibility:  visible;
+                margin: 0;
+            }
+            .social-icons__button{
+                display: none;
+            }
     /** Content */
         /*? Content - Profile*/
-
+        .profile{
+            flex-direction: column;
+        }
+            /*! Content - Profile : ABOUT */
+            .about{
+                margin: 1.5rem 2rem;
+                width: auto;
+            }
+                .about__photo{
+                    display: none;
+                }
+                .about__texts{
+                    margin-left: 0rem;
+                }
+                    .about__texts-title{
+                        font-size: 1.75rem;
+                    }
+            /*! Content - Profile : PERSONAL INFO */
+            .personal-info{
+                margin: 0 1.5rem 1.5rem 1.5rem;
+                padding: 2rem 0 1rem;
+                background: url("../img/header-shadow.png"),
+                    linear-gradient(180deg, var(--red-light) 0%, var(--blue-dark) 100%);
+                background-repeat: no-repeat;
+                line-height: 1.25rem;
+            }
+                .personal-info__line{
+                    justify-content: flex-start;
+                }
+                    .personal-info__line-title{
+                        width: auto;
+                    }
+                    .personal-info__line-desciprtion{
+                        width: inherit;
+                    }
         /*? Content - Menu*/
         .menu-main{
             padding: 0;
+            height: 5rem;
         }
-            .menu-main_tab-link{
-                font-size: 0.75rem;
+            .menu-main_tab{
+                margin: 0 0.25rem;
+                line-height: 1.5rem;
             }
+            .menu-main_tab.active{
+                background: none;
+            }
+                .menu-main_tab-link{
+                    font-size: 0.75rem;
+                }
+                    .menu-main_tab-link > i{
+                        font-size: 2.5rem;
+                    }
 }
 
 @media (max-width: 321px) {
@@ -646,16 +763,28 @@ a{
     .main-container header{
         flex-direction: column;
     }
+        /*! Header - LOGO */
         .logo-header{
-            margin-bottom: 0.5rem;
-            width: 100%;
+            margin: 0.75rem;
+            width: 90%;
         }
+        /*! Header - SOCIAL ICONS */
         .social-icons-container{
             width: 100%;
         }
     /** Content */
         /*? Content - Profile*/
-
+        .personal-info__line{
+            line-height: 1rem;
+        }
+            /*! Content - Profile : ABOUT */
+            .about{
+                margin: 0.75rem 1.25rem;
+            }
+            /*! Content - Profile : PERSONAL INFO */
+            .personal-info{
+                margin: 0 0.75rem 0.75rem 0.75rem;
+            }
         /*? Content - Menu*/
         .menu-main{
             padding: 0;
