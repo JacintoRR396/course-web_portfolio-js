@@ -1,5 +1,5 @@
 window.onload = function() {
-    initPage();
+    initWeb();
     console.log( " » document ready :)" );
 };
 
@@ -12,10 +12,10 @@ var isLogoVisible = false;
 const tabs =  ["profile", "resume", "portfolio", "contact"];
 var tabActive = tabs[0];
 
-const profileButton = document.querySelectorAll(".menu-main_tab-link")[0];
-const resumeButton = document.querySelectorAll(".menu-main_tab-link")[1];
-const protfolioButton = document.querySelectorAll(".menu-main_tab-link")[2];
-const contactButton = document.querySelectorAll(".menu-main_tab-link")[3];
+const profileButton = document.querySelectorAll(".main-menu_tab-link")[0];
+const resumeButton = document.querySelectorAll(".main-menu_tab-link")[1];
+const protfolioButton = document.querySelectorAll(".main-menu_tab-link")[2];
+const contactButton = document.querySelectorAll(".main-menu_tab-link")[3];
 
 const profileContent = document.querySelector(".profile");
     const profileContentProgressBars = document.querySelectorAll(".resume-skills-data__line-progressbar");
@@ -24,13 +24,31 @@ const portfolioContent = document.querySelector(".portfolio");
 const contactContent = document.querySelector(".contact");
 
 /* FUNCTIONS */
-function initPage(){
+function initWeb(){
+    initPagesHMTL();
     initButtons();
     initProgressBars();
 }
 
+function initPagesHMTL(){
+    //chargePageHTML("header", "main-header");
+    tabs.forEach( e => chargePageHTML(`main_${e}`, e) );
+    chargePageHTML("footer", "main-footer");
+}
+    function chargePageHTML(nameFile, IdTag){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('GET', `../html/${nameFile}.html`, true);
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById(IdTag).innerHTML = xmlhttp.responseText;
+                console.log(`Se ha cargado ${nameFile}.html`);
+            }
+        }
+        xmlhttp.send();
+    }
+
 function initButtons(){
-    socialIconsButton.addEventListener("click", () => socialIconsLinks.classList.toggle("opacity-on") );
+    socialIconsButton.addEventListener("click", () => socialIconsLinks.classList.toggle("opacity-off") );
     profileButton.addEventListener("click", (e) => managementTabs(e, 0) );
     resumeButton.addEventListener("click", (e) => managementTabs(e, 1) );
     protfolioButton.addEventListener("click", (e) => managementTabs(e, 2) );
@@ -44,7 +62,7 @@ function initButtons(){
         }
     }
         function managementTabActive(event){
-            var tabElement = event.target.parentElement.parentElement;
+            const tabElement = event.target.parentElement.parentElement;
             // Logo
             switch(tabActive){
                 case tabs[0]:

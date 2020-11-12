@@ -1,12 +1,13 @@
+/** --- VARIABLES --- */
 :root{
-    /* Normal */
+    /** Normal */
     --green: hsl(163, 72%, 41%);
     --red: hsl(356, 69%, 56%);
     --white: #FFF;
     --black: #000;
 
 
-    /* Light */
+    /*! Light */
     --red-light: #CF445C;
     --gray-light: #EDEDED;
     --gray-light-medium: #DDD;
@@ -14,12 +15,13 @@
     --blue-light: hsl(230, 22%, 74%);
     --blue-desaturated: hsl(228, 34%, 66%);
 
-    /*  Dark */
+    /*!  Dark */
     --gray-dark: #555;
     --blue-dark: hsl(228, 12%, 44%);
     --blue-very-dark: hsl(230, 17%, 14%);
     --blue-desaturated-dark: hsl(228, 28%, 20%);
 
+    /*?  Social Media */
     --facebook: hsl(208, 92%, 53%);
     --twitter: hsl(203, 89%, 53%);
     --linkedin: #006097;
@@ -30,4 +32,18 @@
         hsl(329, 70%, 58%) 100%
     );
     --youTube: hsl(348, 97%, 39%);
+}
+
+/** --- DOM --- */
+body{
+    height: 100vh;
+    background: radial-gradient(circle,
+     rgba(127,139,152,1) 0%, rgba(64,81,102,1) 20%, rgba(54,72,92,1) 40%, rgba(42,62,85,1) 60%, rgba(30,52,78,1) 80%, rgba(7,32,62,1) 100%);
+    background-repeat: no-repeat;
+    background: white;
+}
+
+a{
+    color: var(--white);
+    text-decoration: none;
 }
