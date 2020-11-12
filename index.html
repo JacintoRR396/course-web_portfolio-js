@@ -11,7 +11,7 @@
         <meta property="og:description" content="Jacinto Roldan Rodriguez / Full Stack / Web designer">
         <meta property="og:locale" content="es_ES">
         <meta property="og:url" content="devjr2.fullstack">
-        <link rel="shortcut icon" href="/img/favicon.ico">
+        <link rel='Shortcut Icon' type='image/x-icon' href="/img/favicon.ico">
         <!-- CSS -->
             <!-- CSS - Meyer Reset -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
@@ -20,6 +20,8 @@
             <!-- CSS - Inner -->
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="stylesheet" href="./css/config.css">
+        <link rel="stylesheet" href="./css/effect.css">
+        <link rel="stylesheet" href="./css/animation.css">
         <link rel="stylesheet" href="./css/base.css">
 
         <!-- Google Fonts -->
@@ -27,10 +29,20 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap">
     </head>
     <body>
-        <section class="main-container">
-            <header class="main-header">
+        <noscript class="noscript">
+            <h1 class="noscript__title">Bienvenido al Portafolio de Jacinto R<sup>2</sup></h1>
+            <img class="noscript__img" src="./assets/img/biohazard-medium.png" alt="Biohazar" title="Biohazar" />
+            <p class="noscript__description">
+                Para que la Web funcione correctamente se necesita el uso de <strong>JavaScript</strong>.
+            </p>
+        </noscript>
+        <main class="main-container">
+            <header id="main-header" class="main-header">
                 <div class="logo-header">
-                    <img class="logo-header__img" src="./img/photo1.png" alt="Personal photo" />
+                    <h1>
+                        <span class="logo-header__description">Jacinto Roldan Rodriguez, Desarrollador Web FullStack</span>
+                        <img class="logo-header__img" src="./assets/img/photo1.png" alt="Personal photo" title="Personal photo" />
+                    </h1>
                     <div class="logo-header-texts">
                         <h2 class="logo-header__title">Hi, I'm Jacinto R<sup>2</sup></h2>
                         <h4 class="logo-header__subtitle">Developer FullStack</h4>
@@ -39,18 +51,18 @@
                 <div class="social-icons-container">
                     <ul class="social-icons-links">
                         <li class="social-icons-links__line">
-                            <a class="social-icons-links__line-link" href=""><i class="fa fa-facebook"></i></a>
+                            <a class="social-icons-links__line-link" href="" target="_blank"><i class="fa fa-facebook"></i></a>
                         </li>
                         <li class="social-icons-links__line">
-                            <a class="social-icons-links__line-link" href=""><i class="fa fa-twitter"></i></a>
+                            <a class="social-icons-links__line-link" href="" target="_blank"><i class="fa fa-twitter"></i></a>
                         </li>
                         <li class="social-icons-links__line">
-                            <a class="social-icons-links__line-link" href="https://www.linkedin.com/in/jacinto-rold%C3%A1n-rodr%C3%ADguez-06026589/">
+                            <a class="social-icons-links__line-link" href="https://www.linkedin.com/in/jacinto-rold%C3%A1n-rodr%C3%ADguez-06026589/" target="_blank">
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         </li>
                         <li class="social-icons-links__line">
-                            <a class="social-icons-links__line-link" href=""><i class="fa fa-whatsapp"></i></a>
+                            <a class="social-icons-links__line-link" href="" target="_blank"><i class="fa fa-whatsapp"></i></a>
                         </li>
                     </ul>
                     <button class="social-icons__button pulse-button">
@@ -60,69 +72,31 @@
             </header>
             <section class="main-content">
                 <!-- PROFILE -->
-                <section id="profile" class="profile">
-                    <div class="about">
-                        <div class="about__photo">
-                            <img class="about__photo-img" src="./img/photo.jpg" alt="Personal photo">
-                        </div>
-                        <div class="about__texts">
-                            <h1 class="about__texts-title">JACINTO R^2</h1>
-                            <h3 class="about__texts-subtitle">DESARROLLDADOR FULLSTACK<br>(SPRING & ANGULAR)</h3>
-                            <p class="about__texts-description">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et aliquid qui iure minima iste aut alias quia assumenda! Porro, molestias?
-                            </p>
-                        </div>
-                    </div>
-                    <ul class="personal-info">
-                        <li class="personal-info__line">
-                            <label class="personal-info__line-title">Name</label>
-                            <span class="personal-info__line-desciprtion">Jacinto Roldán Rodríguez</span>
-                        </li>
-                        <li class="personal-info__line">
-                            <label class="personal-info__line-title">Birthday</label>
-                            <span class="personal-info__line-desciprtion">15/08/1983</span>
-                        </li>
-                        <li class="personal-info__line">
-                            <label class="personal-info__line-title">Address</label>
-                            <span class="personal-info__line-desciprtion">Corredera 155, El Viso del Alcor (Sevilla)</span>
-                        </li>
-                        <li class="personal-info__line">
-                            <label class="personal-info__line-title">Email</label>
-                            <span class="personal-info__line-desciprtion word-wrap">balbino.v12@gmail.com</span>
-                        </li>
-                        <li class="personal-info__line">
-                            <label class="personal-info__line-title">Phone</label>
-                            <span class="personal-info__line-desciprtion">610972145</span>
-                        </li>
-                        <li class="personal-info__line">
-                            <label class="personal-info__line-title">Website</label>
-                            <span class="personal-info__line-desciprtion word-wrap">www.google.es</span>
-                        </li>
-                    </ul>
-                </section>
+                <article id="profile" class="profile">
+                </article>
                 <!-- MENU -->
-                <nav class="menu-main">
-                    <ul class="menu-main_tabs">
-                        <li class="menu-main_tab active">
-                            <a href="#" class="menu-main_tab-link active">
+                <nav id="main-menu" class="main-menu">
+                    <ul class="main-menu_tabs">
+                        <li class="main-menu_tab active">
+                            <a href="#" class="main-menu_tab-link active">
                                 <i class="fa fa-user"></i>
                                 <span>PROFILE</span>
                             </a>
                         </li>
-                        <li class="menu-main_tab">
-                            <a href="#" class="menu-main_tab-link">
+                        <li class="main-menu_tab">
+                            <a href="#" class="main-menu_tab-link">
                                 <i class="fa fa-wpexplorer"></i>
                                 <span>RESUME</span>
                             </a>
                         </li>
-                        <li class="menu-main_tab">
-                            <a href="#" class="menu-main_tab-link">
+                        <li class="main-menu_tab">
+                            <a href="#" class="main-menu_tab-link">
                                 <i class="fa fa-eercast"></i>
                                 <span>PORTFOLIO</span>
                             </a>
                         </li>
-                        <li class="menu-main_tab">
-                            <a href="#" class="menu-main_tab-link">
+                        <li class="main-menu_tab">
+                            <a href="#" class="main-menu_tab-link">
                                 <i class="fa fa-telegram"></i>
                                 <span>CONTACT</span>
                             </a>
@@ -130,243 +104,18 @@
                     </ul>
                 </nav>
                 <!-- RESUME -->
-                <section id="resume" class="resume">
-                    <div class="resume-part-left">
-                        <div class="resume-profile">
-                            <h1 class="resume-profile__title">Jacinto R^2</h1>
-                            <h3 class="resume-profile__subtitle">Dev Fullstack<br>(Spring & Angular)</h3>
-                            <p class="resume-profile__description">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et aliquid qui iure minima iste aut alias quia assumenda! Porro, molestias?
-                            </p>
-                        </div>
-                        <div class="resume-contact">
-                            <h4 class="resume-contact-title content-title-back">Contact</h4>
-                            <ul class="resume-contact-data">
-                                <li class="resume-contact-data__line">
-                                    <label class="resume-contact-data__line-title">Address</label>
-                                    <span class="resume-contact-data__line-desciprtion">Corredera 155, El Viso del Alcor (Sevilla)</span>
-                                </li>
-                                <li class="resume-contact-data__line">
-                                    <label class="resume-contact-data__line-title">Email</label>
-                                    <span class="resume-contact-data__line-desciprtion">balbino.v12@gmail.com</span>
-                                </li>
-                                <li class="resume-contact-data__line">
-                                    <label class="resume-contact-data__line-title">Phone Nº</label>
-                                    <span class="resume-contact-data__line-desciprtion">610972145</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="resume-experience">
-                            <h4 class="resume-experience-title content-title-back">Experience</h4>
-                            <ul class="resume-experience-data">
-                                <li class="resume-experience-data__line">
-                                    <h2 class="resume-experience-data__line-date content-title-circle">2020-Act</h2>
-                                    <h4 class="resume-experience-data__line-title">Dev FullStack</h4>
-                                    <p class="resume-experience-data__line-desciprtion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, labore?</p>
-                                </li>
-                                <li class="resume-experience-data__line">
-                                    <h2 class="resume-experience-data__line-date content-title-circle">2019-2020</h2>
-                                    <h4 class="resume-experience-data__line-title">Dev Backend</h4>
-                                    <p class="resume-experience-data__line-desciprtion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, labore?</p>
-                                </li>
-                                <li class="resume-experience-data__line">
-                                    <h2 class="resume-experience-data__line-date content-title-circle">2016-2019</h2>
-                                    <h4 class="resume-experience-data__line-title">Dev Backend & Desktop</h4>
-                                    <p class="resume-experience-data__line-desciprtion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, labore?</p>
-                                </li>
-                            </ul>
-                                <li class="resume-experience-data__line">
-                                    <h2 class="resume-experience-data__line-date content-title-circle">2015-2016</h2>
-                                    <h4 class="resume-experience-data__line-title">Microinformatic & Desktop</h4>
-                                    <p class="resume-experience-data__line-desciprtion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, labore?</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="resume-part-right">
-                        <div class="resume-skills">
-                            <h4 class="resume-skills-title content-title-back"> My Skills</h4>
-                            <ul class="resume-skills-data">
-                                <li class="resume-skills-data__line">
-                                    <label class="resume-skills-data__line-title">Java</label>
-                                    <span class="resume-skills-data__line-progressbar" data-value="90"></span>
-                                </li>
-                                <li class="resume-skills-data__line">
-                                    <label class="resume-skills-data__line-title">Spring</label>
-                                    <span class="resume-skills-data__line-progressbar" data-value="65"></span>
-                                </li>
-                                <li class="resume-skills-data__line">
-                                    <label class="resume-skills-data__line-title">HTML</label>
-                                    <span class="resume-skills-data__line-progressbar" data-value="95"></span>
-                                </li>
-                                <li class="resume-skills-data__line">
-                                    <label class="resume-skills-data__line-title">CSS</label>
-                                    <span class="resume-skills-data__line-progressbar" data-value="100"></span>
-                                </li>
-                                <li class="resume-skills-data__line">
-                                    <label class="resume-skills-data__line-title">JavaScript</label>
-                                    <span class="resume-skills-data__line-progressbar" data-value="85"></span>
-                                </li>
-                                <li class="resume-skills-data__line">
-                                    <label class="resume-skills-data__line-title">Angular</label>
-                                    <span class="resume-skills-data__line-progressbar" data-value="40"></span>
-                                </li>
-                                <li class="resume-skills-data__line">
-                                    <label class="resume-skills-data__line-title">Design</label>
-                                    <span class="resume-skills-data__line-progressbar" data-value="35"></span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="resume-interests">
-                            <h4 class="resume-interests-title content-title-back">Interests</h4>
-                            <ul class="resume-interests-data">
-                                <li class="resume-interests-data__line">
-                                    <i class="resume-interests-data__line-icon fa fa-headphones"></i>
-                                    <span class="resume-interests-data__line-title">Music</span>
-                                </li>
-                                <li class="resume-interests-data__line">
-                                    <i class="resume-interests-data__line-icon fa fa-film"></i>
-                                    <span class="resume-interests-data__line-title">Film</span>
-                                </li>
-                                <li class="resume-interests-data__line">
-                                    <i class="resume-interests-data__line-icon fa fa-plane"></i>
-                                    <span class="resume-interests-data__line-title">Travel</span>
-                                </li>
-                                <li class="resume-interests-data__line">
-                                    <i class="resume-interests-data__line-icon fa fa-car"></i>
-                                    <span class="resume-interests-data__line-title">Cars</span>
-                                </li>
-                                <li class="resume-interests-data__line">
-                                    <i class="resume-interests-data__line-icon fa fa-pied-piper-alt"></i>
-                                    <span class="resume-interests-data__line-title">Sports</span>
-                                </li>
-                                <li class="resume-interests-data__line">
-                                    <i class="resume-interests-data__line-icon fa fa-laptop"></i>
-                                    <span class="resume-interests-data__line-title">Computers</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="resume-education">
-                            <h4 class="resume-education-title content-title-back">Education</h4>
-                            <ul class="resume-education-data">
-                                <li class="resume-education-data__line">
-                                    <h2 class="resume-education-data__line-date content-title-circle">2015-2018</h2>
-                                    <h4 class="resume-education-data__line-title">CFGS DAW</h4>
-                                    <p class="resume-education-data__line-desciprtion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, labore?</p>
-                                </li>
-                                <li class="resume-education-data__line">
-                                    <h2 class="resume-education-data__line-date content-title-circle">2003-2009</h2>
-                                    <h4 class="resume-education-data__line-title">I.T.I.G.</h4>
-                                    <p class="resume-education-data__line-desciprtion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, labore?</p>
-                                </li>
-                                <li class="resume-education-data__line">
-                                    <h2 class="resume-education-data__line-date content-title-circle">2001-2003</h2>
-                                    <h4 class="resume-education-data__line-title">CFGS Administración y Finanzas</h4>
-                                    <p class="resume-education-data__line-desciprtion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, labore?</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+                <article id="resume" class="resume">
+                </article>
                 <!-- PROTFOLIO -->
-                <section id="portfolio" class="portfolio">
-                    <div class="portfolio-filter">
-                        <ul class="portfolio-filter-data">
-                            <li class="portfolio-filter-data__line active">
-                                <a class="portfolio-filter-data__line-link" href="" data-filter="*">All</a>
-                            </li>
-                            <li class="portfolio-filter-data__line">
-                                <a class="portfolio-filter-data__line-link" href="" data-filter=".front">Front</a>
-                            </li>
-                            <li class="portfolio-filter-data__line">
-                                <a class="portfolio-filter-data__line-link" href="" data-filter=".back">Back</a>
-                            </li>
-                            <li class="portfolio-filter-data__line">
-                                <a class="portfolio-filter-data__line-link" href="" data-filter=".fullstack">FullStack</a>
-                            </li>
-                            <li class="portfolio-filter-data__line">
-                                <a class="portfolio-filter-data__line-link" href="" data-filter=".design">Design</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="portfolio-list">
-                        <ul class="portfolio-list-data">
-                            <li class="portfolio-list-data__line">
-                                <a class="portfolio-list-data__line-link" href="">
-                                    <img class="portfolio-list-data__line-link-img" src="./img/1-thumb.jpg" alt="Running" />
-                                    <h2 class="portfolio-list-data__line-link-title">Running</h2>
-                                    <span class="portfolio-list-data__line-link-categorie">Back</span>
-                                </a>
-                            </li>
-                            <li class="portfolio-list-data__line active">
-                                <a class="portfolio-list-data__line-link" href="">
-                                    <img class="portfolio-list-data__line-link-img" src="./img/4-thumb.jpg" alt="grandfather" />
-                                    <h2 class="portfolio-list-data__line-link-title">Grandmother</h2>
-                                    <span class="portfolio-list-data__line-link-categorie">Design</span>
-                                </a>
-                            </li>
-                            <li class="portfolio-list-data__line">
-                                <a class="portfolio-list-data__line-link" href="">
-                                    <img class="portfolio-list-data__line-link-img" src="./img/1-thumb.jpg" alt="Running" />
-                                    <h2 class="portfolio-list-data__line-link-title">Running</h2>
-                                    <span class="portfolio-list-data__line-link-categorie">Back</span>
-                                </a>
-                            </li>
-                            <li class="portfolio-list-data__line">
-                                <a class="portfolio-list-data__line-link" href="">
-                                    <img class="portfolio-list-data__line-link-img" src="./img/4-thumb.jpg" alt="grandfather" />
-                                    <h2 class="portfolio-list-data__line-link-title">Grandmother</h2>
-                                    <span class="portfolio-list-data__line-link-categorie">Design</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+                <article id="portfolio" class="portfolio">
+                </article>
                 <!-- CONTACT -->
-                <section id="contact" class="contact">
-                    <div class="contact-map">
-                        <iframe class="contact-map__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.038810195508!2d-5.723881384269861!3d37.388914442037226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1289dc83ea2b4d%3A0x116952df84906055!2sCalle%20Corredera%2C%20155%2C%2041520%20El%20Viso%20del%20Alcor%2C%20Sevilla!5e0!3m2!1ses!2ses!4v1603263954063!5m2!1ses!2ses"
-                            width="300" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                    </div>
-                    <div class="contact-row2">
-                        <div class="contact-info">
-                            <h3 class="contact-info-title">Contact Info</h3>
-                            <ul class="contact-info-data">
-                                <li class="contact-info-data__line">Lorem ipsum dolor sit amet.</li>
-                                <li class="contact-info-data__line">Lorem ipsum dolor sit amet.</li>
-                            </ul>
-                        </div>
-                        <div class="contact-msg">
-                            <h3 class="contact-msg-title">Let's keep in touch</h3>
-                            <form action="" class="contact-msg-form">
-                                <ul class="contact-msg-form-data">
-                                    <li class="contact-msg-form-data__line">
-                                        <label id="label-name" class="contact-msg-form-data__line-label" for="input-name">Your Name</label>
-                                        <input id="input-name" class="contact-msg-form-data__line-input" type="text" />
-                                    </li>
-                                    <li class="contact-msg-form-data__line">
-                                        <label id="label-email" class="contact-msg-form-data__line-label" for="input-email">Your Email</label>
-                                        <input id="input-email" class="contact-msg-form-data__line-input" type="email" />
-                                    </li>
-                                    <li class="contact-msg-form-data__line">
-                                        <label id="label-msg" class="contact-msg-form-data__line-label" for="textarea-msg">Your Message</label>
-                                        <textarea id="textarea-msg" class="contact-msg-form-data__line-textarea" cols="50" rows="7"></textarea>
-                                    </li>
-                                    <li class="contact-msg-form-data__line">
-                                        <input id="input-submit" class="contact-msg-form-data__line-submit" name="submit" type="submit" value="Send your message" />
-                                    </li>
-                                </ul>
-                            </form>
-                        </div>
-                    </div>
-                </section>
+                <article id="contact" class="contact">
+                </article>
             </section>
-            <footer>
-                <div class="copyright">
-                    Copyright &copy; 2020 JR^2
-                </div>
+            <footer id="main-footer">
             </footer>
-        </section>
+        </main>
 
         <!-- JavaScript -->
         <script src="js/main.js"></script>

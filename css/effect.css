@@ -1,0 +1,28 @@
+/** --- EFFECTS --- */
+.display-flex{
+    display: flex !important;
+}
+.display-none{
+    display: none !important;
+}
+
+.opacity-on{
+    opacity: 1 !important;
+}
+.opacity-off{
+    opacity: 0 !important;
+}
+
+.collapse-height{
+    max-height: 2rem !important;
+}
+
+.translate-xy{
+    transform: translate(0rem, 0rem) !important;
+}
+.translate-x{
+    transform: translateX(0rem) !important;
+}
+.translate-y{
+    transform: translateY(0rem) !important;
+}

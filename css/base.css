@@ -1,32 +1,4 @@
 /** --- GENERIC CLASSES --- */
-.display-flex{
-    display: flex !important;
-}
-.display-none{
-    display: none !important;
-}
-
-.opacity-on{
-    opacity: 1 !important;
-}
-.opacity-off{
-    opacity: 0 !important;
-}
-
-.collapse-height{
-    max-height: 2rem !important;
-}
-
-.translate-xy{
-    transform: translate(0rem, 0rem) !important;
-}
-.translate-x{
-    transform: translateX(0rem) !important;
-}
-.translate-y{
-    transform: translateY(0rem) !important;
-}
-
 .content-title-back{
     padding: 0.5rem;
     font-size: 1.5rem;
@@ -44,21 +16,45 @@
     text-indent: 1rem;
 }
 
-/** --- DOM --- */
-body{
-    height: 100vh;
-    background: radial-gradient(circle,
-     rgba(127,139,152,1) 0%, rgba(64,81,102,1) 20%, rgba(54,72,92,1) 40%, rgba(42,62,85,1) 60%, rgba(30,52,78,1) 80%, rgba(7,32,62,1) 100%);
-    background-repeat: no-repeat;
-    background: white;
-}
-
-a{
-    color: var(--white);
-    text-decoration: none;
-}
-
 /** --- SPECIFIC CLASSES --- */
+/** No Script */
+.noscript{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+}
+    .noscript__title{
+        border-radius: 0.5rem;
+        border-bottom: 1px solid var(--blue-desaturated);
+        color: var(--red-light);
+    }
+    .noscript__title::first-letter{
+        color: var(--gray-medium);
+        font-size: 2.5rem;
+    }
+    .noscript__img{
+        padding: 2rem;
+        border: 1px solid white;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    .noscript__description{
+        margin: 1rem;
+        border-radius: 1rem;
+        border: 1px solid white;
+        padding: 1rem;
+        background-color: gray;
+        font-weight: 900;
+    }
+
 /** Container */
 .main-container{
     display: grid;
@@ -66,12 +62,12 @@ a{
     grid-template-columns: 860px;
     grid-template-rows: auto auto auto;
     grid-gap: 1rem;
-    margin: 2rem auto 1rem auto;
 }
 
 /** Header */
 .main-container header{
     display: flex;
+    margin-top: 1rem;
     overflow: hidden;
 }
     /*! Header - LOGO */
@@ -83,6 +79,9 @@ a{
         transform: translate(-25rem, -5rem);
         transition: all 2s ease;
     }
+        .logo-header__description{
+            display: none;
+        }
         .logo-header__img{
             width: 4rem;
             height: 4rem;
@@ -126,7 +125,7 @@ a{
             border-radius: 5px 0px;
             background: radial-gradient(circle, var(--red-light) 0%,
                 var(--blue-dark) 100%);
-            opacity: 0;
+            opacity: 1;
             transition: opacity 1s ease;
         }
             .social-icons-links__line{
@@ -144,6 +143,7 @@ a{
             width: 2rem;
             height: 2rem;
             color: var(--white);
+            background-color: var(--blue-desaturated-dark);
         }
 
 /** Content */
@@ -186,10 +186,11 @@ a{
                 margin-left: 0.5rem;
             }
                 .about__texts-title{
-                    margin-top: 0.5rem;
+                    margin: 0.5rem 0;
                     color: var(--gray-medium);
                     line-height: 2rem;
                     font-weight: 700;
+                    font-size: 2rem;
                 }
                 .about__texts-subtitle{
                     line-height: 1.5rem;
@@ -214,7 +215,7 @@ a{
             padding: 1.25rem;
             min-height: 15rem;
             background: url("../img/personal-info-sep.png"),
-                linear-gradient(90deg, var(--red-light) 0%, var(--blue-dark) 100%);
+                linear-gradient(90deg, var(--red-light) 0%, var(--blue-desaturated-dark) 100%);
             background-repeat: no-repeat;
         }
             .personal-info__line{
@@ -239,9 +240,16 @@ a{
                     font-weight: 400;
                     font-family: 'Roboto Condensed', sans-serif;
                 }
+                    .personal-info__line-desciprtion > a{
+                        transition: all 0.5s ease;
+                    }
+                    .personal-info__line-desciprtion > a:hover{
+                        margin-left: 0.25rem;
+                        font-style: italic;
+                    }
 
     /*? Content - Menu*/
-    .menu-main{
+    .main-menu{
         position: relative;
         top: 0;
         padding: 0 6rem;
@@ -251,24 +259,24 @@ a{
         /*background: linear-gradient(90deg, var(--red-light) 0%, var(--blue-dark) 100%);*/
     }
         /*! Content - Menu : TABS*/
-        .menu-main_tabs{
+        .main-menu_tabs{
             display: flex;
             justify-content: space-evenly;
             margin-top: -1rem;
             height: 7.5rem;
             z-index: 100;
         }
-            .menu-main_tab{
+            .main-menu_tab{
                 margin: 0 0.5rem;
                 padding: 1.5rem 0;
                 width: 7.5rem;
                 line-height: 2rem;
                 transition: all ease 0.5s;
             }
-            .menu-main_tab.active{
+            .main-menu_tab.active{
                 background: url("../img/tab-hover.png") no-repeat;
             }
-                .menu-main_tab-link{
+                .main-menu_tab-link{
                     color: var(--gray-medium);
                     font-size: 1rem;
                     font-weight: 580;
@@ -278,30 +286,30 @@ a{
                     text-decoration: none;
                     transition: all ease 0.5s;
                 }
-                .menu-main_tab-link:hover{
+                .main-menu_tab-link:hover{
                     color: var(--gray-medium);
                     text-decoration: none;
                     font-size: 1.25rem;
                 }
-                .menu-main_tab-link:hover > i{
+                .main-menu_tab-link:hover > i{
                     color: var(--red-light);
                 }
-                .menu-main_tab-link:hover > span{
+                .main-menu_tab-link:hover > span{
                     color: var(--blue-dark);
                 }
-                .menu-main_tab-link.active{
+                .main-menu_tab-link.active{
                     color: var(--blue-dark);
                 }
-                    .menu-main_tab-link > i{
+                    .main-menu_tab-link > i{
                         display: block;
                         margin: 0.25rem 0 0.1rem;
                         font-size: 3rem;
                         transition: color ease-in-out 0.5s;
                     }
-                    .menu-main_tab-link.active > i{
+                    .main-menu_tab-link.active > i{
                         animation:  bounce 2s infinite;
                     }
-                    .menu-main_tab-link > span{
+                    .main-menu_tab-link > span{
                         display: block;
                         transition: color ease-in-out 0.5s;
                     }
@@ -359,12 +367,13 @@ a{
             background-color: var(--white);
         }
             .resume-contact-title, .resume-experience-title{
+                position: relative;
                 background: linear-gradient(90deg, var(--red-light) 30%, var(--blue-dark) 100%);
                 color: var(--white);
             }
         /*! Content - Resume : CONTACT*/
             .resume-contact-data{
-                background: linear-gradient(90deg, var(--white) 0%, var(--gray-light) 100%);
+                background: linear-gradient(90deg, var(--white) 0%, var(--gray-light) 10%, var(--white) 100%);
                 border-top: 1px dotted red;
                 padding: 1rem;
             }
@@ -382,12 +391,23 @@ a{
                     .resume-contact-data__line-desciprtion{
                         width: 75%;
                     }
+                        .resume-contact-data__line-desciprtion > a{
+                            color: var(--black);
+                            transition: all 0.5s ease;
+                        }
+                        .resume-contact-data__line-desciprtion > a:hover{
+                            font-style: italic;
+                            margin-left: 0.5rem;
+                        }
         /*! Content - Resume : EXPERIENCE*/
             .resume-experience-data__line{
                 display: flex;
                 flex-direction: column;
                 border-top: 1px dotted red;
                 padding: 1rem;
+            }
+            .resume-experience-data__line:nth-child(odd){
+                background: linear-gradient(90deg, var(--white) 0%, var(--gray-light) 20%, var(--white) 100%);
             }
                 .resume-experience-data__line-date{
                     background-color: var(--red-light);
@@ -438,7 +458,7 @@ a{
                         linear-gradient(to right, var(--blue-desaturated-dark) 0%, var(--blue-dark) 35%, var(--red-light) 100%), lightgray;
                     text-align: center;
                     box-shadow:inset 0px -2px 5px rgba(0, 0, 0, 0.5);
-                    animation: changeProgressBar 1s linear infinite;
+                    /*animation: changeProgressBar 1s linear infinite;*/
                 }
         /*! Content - Resume : INTERESTS*/
             .resume-interests-data{
@@ -451,6 +471,7 @@ a{
                     align-items: center;
                     margin: 1rem;
                     width: 25%;
+                    background: linear-gradient(180deg, var(--blue-desaturated-dark) 0%, var(--blue-dark) 70%, var(--blue-desaturated-dark) 100%);
                 }
                     .resume-interests-data__line-icon{
                         margin-bottom: 1rem;
@@ -465,6 +486,15 @@ a{
                 display: flex;
                 flex-direction: column;
                 padding: 1rem;
+                border-left: 1px solid var(--blue-desaturated-dark);
+                border-radius: 0.5rem;
+                transition: border-left 0.5s ease-in;
+            }
+            .resume-education-data__line:hover{
+                border-left: 1px solid var(--white);
+            }
+            .resume-education-data__line:nth-child(even){
+                background: linear-gradient(90deg, var(--blue-desaturated-dark) 0%, var(--blue-very-dark) 20%, var(--blue-desaturated-dark) 100%);
             }
                 .resume-education-data__line-date{
                     color: var(--blue-very-dark);
@@ -480,38 +510,43 @@ a{
                 .resume-education-data__line-desciprtion{
                     margin: 0.25rem;
                 }
+                .resume-education-data__line-download{
+                    color: var(--blue-desaturated);
+                    text-align: right;
+                    transition: all 0.5s ease;
+                }
+                .resume-education-data__line-download:hover{
+                    color: var(--blue-dark);
+                }
 
     /*? Content - Portfolio*/
     .portfolio{
         flex-direction: column;
     }
-        .portfolio-filter, .portfolio-list{
-            margin: 0 1rem;
+        .portfolio-filter-data, .portfolio-list-data{
+            display: flex;
+            flex-wrap: wrap;
         }
-            .portfolio-filter-data, .portfolio-list-data{
-                display: flex;
-                flex-wrap: wrap;
-            }
         /*! Content - Portfolio : FILTER*/
             .portfolio-filter-data{
-                border-bottom: 1px solid var(--blue-desaturated-dark);
+                position: relative;
+                background: linear-gradient(180deg, var(--blue-desaturated-dark) 0%, var(--blue-dark) 70%, var(--blue-desaturated-dark) 100%);
             }
                 .portfolio-filter-data__line{
-                    margin: 1rem;
-                    border: 2px solid var(--gray-medium);
-                    border-radius: 15px;
+                    border-bottom: 1px solid transparent;
                     padding: 0.5rem 1rem;
-                    background-color: var(--gray-dark);
+                    margin: 1rem;
+                    transition: all ease 1s;
                 }
                 .portfolio-filter-data__line:hover{
-                    border-color: var(--blue-desaturated);
+                    border-bottom: 1px solid var(--red-light);
                 }
                 .portfolio-filter-data__line.active{
-                    border-color: var(--gray-dark);
-                    background-color: var(--red-light);
+                    border-bottom: 1px solid var(--gray-light);
                 }
-                .portfolio-filter-data__line.active:hover{
-                    border-color: var(--gray-medium);
+                .portfolio-filter-data__line.active > a{
+                    color: var(--red-light);
+                    font-weight: 900;
                 }
         /*! Content - Portfolio : LIST*/
             .portfolio-list-data{
@@ -597,23 +632,6 @@ a{
     text-shadow: 0 0 5px var(--red-light);
 }
 
-/** --- ANIMATIONS --- */
-@keyframes bounce{
-    0%, 20%, 50%, 80%, 100%{
-        transform: translateY(0);
-    }
-    40%{
-        transform: translateY(0px);
-    }
-    60%{
-        transform: translateY(-10px);
-    }
-}
-@keyframes changeProgressBar {
-    from {background-position:0 0,left}
-    to {background-position:30px 0,left}
-  }
-
 /** --- RESPONSIVE --- */
 @media (max-width: 769px) {
     /** Container */
@@ -664,10 +682,10 @@ a{
                     width: 70%;
                 }
         /*? Content - Menu*/
-        .menu-main{
+        .main-menu{
             padding: 0 3rem;
         }
-            .menu-main_tab-link{
+            .main-menu_tab-link{
                 font-size: 0.9rem;
             }
 }
@@ -735,21 +753,21 @@ a{
                         width: inherit;
                     }
         /*? Content - Menu*/
-        .menu-main{
+        .main-menu{
             padding: 0;
             height: 5rem;
         }
-            .menu-main_tab{
+            .main-menu_tab{
                 margin: 0 0.25rem;
                 line-height: 1.5rem;
             }
-            .menu-main_tab.active{
+            .main-menu_tab.active{
                 background: none;
             }
-                .menu-main_tab-link{
+                .main-menu_tab-link{
                     font-size: 0.75rem;
                 }
-                    .menu-main_tab-link > i{
+                    .main-menu_tab-link > i{
                         font-size: 2.5rem;
                     }
 }
@@ -786,10 +804,10 @@ a{
                 margin: 0 0.75rem 0.75rem 0.75rem;
             }
         /*? Content - Menu*/
-        .menu-main{
+        .main-menu{
             padding: 0;
         }
-            .menu-main_tab-link{
+            .main-menu_tab-link{
                 font-size: 0.75rem;
             }
 }
