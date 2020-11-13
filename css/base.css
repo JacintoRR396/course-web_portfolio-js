@@ -160,7 +160,7 @@
         max-height: 18rem;
         border-top: 1px solid var(--gray-light-medium);
         background-color: var(--red-light);
-        background-image: url("../img/header-shadow.png");
+        background-image: url("../assets/img/header-shadow.png");
         background-position: center bottom;
         background-repeat: repeat-x;
         overflow: hidden;
@@ -214,8 +214,7 @@
             margin: 1rem 0;
             padding: 1.25rem;
             min-height: 15rem;
-            background: url("../img/personal-info-sep.png"),
-                linear-gradient(90deg, var(--red-light) 0%, var(--blue-desaturated-dark) 100%);
+            background: linear-gradient(90deg, var(--red-light) 0%, var(--blue-desaturated-dark) 100%);
             background-repeat: no-repeat;
         }
             .personal-info__line{
@@ -274,7 +273,7 @@
                 transition: all ease 0.5s;
             }
             .main-menu_tab.active{
-                background: url("../img/tab-hover.png") no-repeat;
+                background: url("../assets/img/tab-hover.png") no-repeat;
             }
                 .main-menu_tab-link{
                     color: var(--gray-medium);
@@ -738,8 +737,6 @@
             .personal-info{
                 margin: 0 1.5rem 1.5rem 1.5rem;
                 padding: 2rem 0 1rem;
-                background: url("../img/header-shadow.png"),
-                    linear-gradient(180deg, var(--red-light) 0%, var(--blue-dark) 100%);
                 background-repeat: no-repeat;
                 line-height: 1.25rem;
             }
