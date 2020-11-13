@@ -18,7 +18,7 @@ const protfolioButton = document.querySelectorAll(".main-menu_tab-link")[2];
 const contactButton = document.querySelectorAll(".main-menu_tab-link")[3];
 
 const profileContent = document.querySelector(".profile");
-    const profileContentProgressBars = document.querySelectorAll(".resume-skills-data__line-progressbar");
+const profileContentProgressBars = document.querySelectorAll(".resume-skills-data__line-progressbar");
 const resumeContent = document.querySelector(".resume");
 const portfolioContent = document.querySelector(".portfolio");
 const contactContent = document.querySelector(".contact");
@@ -26,8 +26,10 @@ const contactContent = document.querySelector(".contact");
 /* FUNCTIONS */
 function initWeb(){
     initPagesHMTL();
-    initButtons();
-    initProgressBars();
+    setTimeout(() => {
+        initButtons();
+        initProgressBars();
+    }, 100);
 }
 
 function initPagesHMTL(){
