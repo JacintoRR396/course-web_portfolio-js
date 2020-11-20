@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /** --- VARIABLES --- */
 :root{
     /** Normal */
@@ -46,4 +48,8 @@ body{
 a{
     color: var(--white);
     text-decoration: none;
+}
+
+abbr{
+    text-decoration: none !important;
 }

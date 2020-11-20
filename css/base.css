@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /** --- GENERIC CLASSES --- */
 .content-title-back{
     padding: 0.5rem;
@@ -32,7 +34,7 @@
     z-index: 1000;
 }
     .noscript__title{
-        border-radius: 0.5rem;
+        border-radius: 0 0 0.25rem 0.15rem;
         border-bottom: 1px solid var(--blue-desaturated);
         color: var(--red-light);
     }
@@ -82,11 +84,23 @@
         .logo-header__description{
             display: none;
         }
-        .logo-header__img{
-            width: 4rem;
+        .logo-header-imgs{
             height: 4rem;
-            filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.7));
+            width: 4rem;
         }
+            .logo-header__img{
+                position: absolute;
+                width: 4rem;
+                height: 4rem;
+                filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.7));
+                opacity: 0.9;
+            }
+            .logo-header__img:nth-child(1){
+                animation: fadeOutIn 30s ease-in-out 0s infinite;
+            }
+            .logo-header__img:nth-child(2){
+                animation: fadeOutIn 30s ease-in-out 15s infinite;
+            }
         .logo-header-texts{
             margin: auto;
             margin-left: 1rem;
@@ -315,7 +329,7 @@
 
     .resume, .portfolio, .contact{
         display: none;
-        border-bottom: 1px solid var(--gray-light-medium);
+        border-bottom: 1px solid var(--red-light);
         background-color: var(--gray-light-medium);
         z-index: 0;
         opacity: 0;
@@ -621,14 +635,14 @@
 /** Footer */
 .copyright{
     padding: 0.25rem;
-    border-radius: 5px;
+    border-radius: 1px;
     background: radial-gradient(circle, var(--blue-dark) 0%,
                 var(--gray-light-medium) 100%);
     color: var(--white);
     font-weight: 900;
     text-align: center;
     font-size: 1.25rem;
-    text-shadow: 0 0 5px var(--red-light);
+    text-shadow: 0 0 5px var(--gray-dark);
 }
 
 /** --- RESPONSIVE --- */
