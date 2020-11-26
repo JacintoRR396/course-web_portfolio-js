@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /** --- EFFECTS --- */
 .display-flex{
     display: flex !important;
@@ -26,3 +28,5 @@
 .translate-y{
     transform: translateY(0rem) !important;
 }
+
+/** Curso Udemy */
