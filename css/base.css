@@ -393,7 +393,7 @@
                 .resume-contact-data__line{
                     display: flex;
                     justify-content: space-between;
-                    padding: 1rem 0;
+                    padding: 0.5rem 0;
                     font-weight: 700;
                 }
                     .resume-contact-data__line-title{
@@ -446,16 +446,24 @@
         /*! Content - Resume : SKILLS*/
             .resume-skills-data__line{
                 display: flex;
+                flex-wrap: wrap;
+                align-items: center;
                 padding: 0.5rem 1rem;
             }
+            .resume-skills-data__line:hover .resume-skills-data__line-title{
+                color: var(--red-light);
+            }
+            .resume-skills-data__line:hover .resume-skills-data__line-progressbar::before{
+                animation: changeProgressBar 1s linear infinite;
+            }
                 .resume-skills-data__line-title{
-                    width: 35%;
+                    width: 30%;
                     text-transform: uppercase;
                 }
                 .resume-skills-data__line-progressbar{
                     --data-val : 98%;
                     border-radius: 15px;
-                    width: 65%;
+                    width: 60%;
                     background-color: var(--white);
                 }
                 .resume-skills-data__line-progressbar::before{
@@ -470,8 +478,37 @@
                         rgba(255, 255, 255, 0.15) 75%, transparent 75%) left/30px 30px repeat-x,
                         linear-gradient(to right, var(--blue-desaturated-dark) 0%, var(--blue-dark) 35%, var(--red-light) 100%), lightgray;
                     text-align: center;
-                    box-shadow:inset 0px -2px 5px rgba(0, 0, 0, 0.5);
-                    /*animation: changeProgressBar 1s linear infinite;*/
+                    box-shadow: inset 0px -2px 5px rgba(0, 0, 0, 0.5);
+                }
+                #resume-skills-data__line-input{
+                    display: none;
+                }
+                #resume-skills-data__line-input:checked ~ .resume-skills-data__line-description{
+                    margin: 0.5rem 0 0 0;
+                    padding: 0rem 0.25rem;
+                    height: 3rem;
+                    opacity: 1;
+                    overflow: auto;
+                }
+                .resume-skills-data__line-info{
+                    width: 10%;
+                    text-align: right;
+                }
+                .resume-skills-data__line-info:hover{
+                    color: var(--blue-desaturated);
+                    cursor: pointer;
+
+                }
+                .resume-skills-data__line-description{
+                    border-radius: 2px;
+                    width: 23rem;
+                    height: 0rem;
+                    line-height: 1.5rem;
+                    background-color: var(--black);
+                    color: var(--blue-desaturated);
+                    opacity: 0;
+                    overflow: hidden;
+                    transition: all 1s ease-in-out;
                 }
         /*! Content - Resume : INTERESTS*/
             .resume-interests-data{
@@ -483,8 +520,19 @@
                     flex-direction: column;
                     align-items: center;
                     margin: 1rem;
+                    border: 1px solid var(--blue-desaturated-dark);
+                    border-radius: 5px;
+                    padding: 0.25rem;
                     width: 25%;
                     background: linear-gradient(180deg, var(--blue-desaturated-dark) 0%, var(--blue-dark) 70%, var(--blue-desaturated-dark) 100%);
+                    transition: border 0.5s ease-in;
+                }
+                .resume-interests-data__line:hover{
+                    border-bottom: 1px solid var(--white);
+                    border-top: 1px solid var(--white);
+                }
+                .resume-interests-data__line:hover .resume-interests-data__line-title{
+                    color: var(--red-light);
                 }
                     .resume-interests-data__line-icon{
                         margin-bottom: 1rem;
@@ -493,6 +541,7 @@
                     }
                     .resume-interests-data__line-title{
                         text-transform: uppercase;
+                        transition: color 0.5s ease-in;
                     }
         /*! Content - Resume : EDUCATION*/
             .resume-education-data__line{
@@ -501,9 +550,10 @@
                 padding: 1rem;
                 border-left: 1px solid var(--blue-desaturated-dark);
                 border-radius: 0.5rem;
-                transition: border-left 0.5s ease-in;
+                transition: all 0.5s ease-in;
             }
             .resume-education-data__line:hover{
+                transform: translateX(0.5rem);
                 border-left: 1px solid var(--white);
             }
             .resume-education-data__line:nth-child(even){
